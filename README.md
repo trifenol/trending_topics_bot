@@ -1,6 +1,7 @@
-# trending_topics_bot
-Script de criação do Trendinho, bot que envia o trending topics do Twitter do Brasil pra todos os usuários cadastrados.
+# Trendy, a Trending Topics Bot
 
-O bot ainda está em fase de teste. :D
+This is a script for creation of Trendy, a bot that send trending topics from the location chosen by the user every hour
 
-Link para acesso: https://t.me/trending_topics_br_bot
+The bot is a beta yet, ok?
+
+Link for access: https://t.me/trendy_twitter_bot
