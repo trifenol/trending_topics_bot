@@ -81,7 +81,7 @@ if(dbExistsTable(db_trends, "base_help_old") == TRUE){
                row.names = FALSE, append = T)}
 
 
-base <- base %>% filter(Text_type == "START"  & Text_type == "STOP")
+base <- base %>% filter(Text_type == "START"  | Text_type == "STOP")
 
 # checking if the user is already registered and sending a welcome message
 if(dbExistsTable(db_trends, "base_bot") == TRUE){
@@ -102,13 +102,12 @@ if(dbExistsTable(db_trends, "base_country") == TRUE){
   nrow(base_country)}
 
 # Adding the country if the user has not chosen yet
-if(nrow(base[base$Text_type == "START"]) != 0){
+if(nrow(base[base$Text_type == "START",]) != 0){
 forced_user <- base %>% filter(Text_type == "START")
 forced_country_base <- setdiff(forced_user,forced_country)
 forced_country_base$Text <- "/GLOBAL"
 forced_country_base$Text_type <- "COUNTRY"
 base_country <- rbind(forced_country_base, base_country)}
-
 
 # sending the welcome message
 ct_erro_new <- 0
